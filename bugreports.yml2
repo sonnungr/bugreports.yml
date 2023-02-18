@@ -1,0 +1,74 @@
+- summary: |
+    Нет возможности играть с другим пользователем
+  environment: |
+    Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+     ОС	Microsoft Windows 7
+  steps-to-reproduce: |
+   - зайти на сайт https://codebattle.hexlet.io/
+   - нажать кнопку create a game
+   - в графе Level выбрать первое значение
+   - в графе Game Type выбрать With other users
+   - в графе Time control установить значение 8 min
+   - в графе Choose task by name or tags выбрать rect_area
+   - в графе Tags выбрать match 
+   - нажать кнопку create battle
+  expected-result: |
+    должна быть возможность предложение игры другому онлайн пользователю
+  actual-result: |
+    нет возможность предложения онлайн игры другому пользователю
+
+- summary: |
+    игра неумещает информацию о возможности игры в мобильных устройствах
+  environment: |
+    Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+     ОС	Microsoft Windows 7
+  steps-to-reproduce: |
+   - открыть https://codebattle.hexlet.io/
+   - нажать f12,зайти в DevTools
+   - нажать toggle Device toolbar
+   - в строке Dimensions:Responsive выбрать параметры:iPhone XR
+   - нажать кнопку create a game
+   - в графе Level выбрать первое значение
+   - в графе Game Type выбрать With other users
+   - в графе Time control установить значение 8 min
+   - в графе Choose task by name or tags выбрать rect_area
+   - в графе Tags выбрать match 
+   - нажать кнопку create battle
+  expected-result: |
+    игра должна быть выровнена для удобного использования в мобильных устройствах 
+  actual-result: |
+    при выборе параметра Toggle devace toolbar не умещается вся информация о просмотре участников игры и возможности игры
+    
+ - summary: |
+    интернет-магазин неадаптирован под различные устройства
+  environment: |
+    Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+     ОС	Microsoft Windows 7
+  steps-to-reproduce: |
+   открыть https://hexlet-products-store.vercel.app/
+   нажать f12,зайти в DevTools
+   нажать Toggle Device toolbar
+   в строке Dimensions:Responsive выбрать параметры:iPhone XR,Samsung Galaxy S8+
+  expected-result: |
+    интернет-магазин должен адаптирован под различные устройства с удобством пользования
+  actual-result: |
+    при выборе мобильных устройств левая колонка не выравнена по сетке 
+
+- summary: |
+    при отсутствии интернета показана чистая страница без оповещения об отсутствия соединения или низкой скорости
+
+  environment: |
+   Версия 108.0.5359.125 (Официальная сборка) (64 бит)
+    ОС Microsoft Windows 7
+  steps-to-reproduce: |
+   открыть https://hexlet-products-store.vercel.app/
+   нажать f12,зайти в DevTools
+   зайти во вкладку Network
+   выбрать параметр Slow 3G
+   зайти в корзину и оформить заказ
+   выбрать параметр Offline
+   перезагрутить страницу
+  expected-result: |
+   на странице интернет-магазина должно быть оповещение об отсутствии интернета или низкой скорости соединения
+  actual-result: |
+   нет оповещения об отсутствии интернета или низкой скорости соединения
